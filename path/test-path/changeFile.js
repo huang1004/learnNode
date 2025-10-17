@@ -44,7 +44,8 @@ const readNewFile = (data) => {
         }
         console.log('写入script-clock.js成功')
     })
-
+    // let stylePath = path.join(__dirname, '/style-clock.css')
+    // let scriptPath = path.join(__dirname, '/script-clock.js')
     changeHtml.html = data.replace(styleReg, `<link rel="stylesheet" href="./style-clock.css">`).replace(scriptReg, `<script src="./script-clock.js"></script>`)
 
     fs.writeFile(path.join(__dirname, '/html-clock.html'), changeHtml.html, (err) => {
